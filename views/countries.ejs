@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./styles" rel="stylesheet" type="text/css">
+    <title>Countries</title>
+</head>
+<body>
+    <h2>Countries:</h2>
+    <br/>
+    <table>
+        <thead>
+            <tr>
+                <th>Flag</th>
+                <th>Country Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% countries.forEach(country => { %>
+                <tr>
+                    <td><img src="<%= country.flags.png %>" width="30" height="30"></td>
+                    <td><a href="/countries/country-details?country=<%= country.name.common %>"><%= country.name.common %></a></td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+    
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+    
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+    
+</body>
+</html>
